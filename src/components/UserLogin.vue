@@ -11,7 +11,7 @@
         },
         methods: {
             efetuarLogin(){
-                this.$http.post("http://localhost:5000/api/cliente/login", this.usuario).then(res => {
+                this.$http.post("https://rakgameshop-prod.herokuapp.com/api/cliente/login", this.usuario).then(res => {
                     if(res.status == 200){
                         this.$root.setUsuario(res.body);
                         if(res.body.admin){

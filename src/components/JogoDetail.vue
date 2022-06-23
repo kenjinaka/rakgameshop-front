@@ -19,7 +19,7 @@
             if(this.usuario == null || !this.usuario.admin){
                 return this.$router.push({ name: 'login' })
             }
-            this.$http.get('http://localhost:5000/api/admin/buscarjogos').then(res =>{
+            this.$http.get('https://rakgameshop-prod.herokuapp.com/api/admin/buscarjogos').then(res =>{
                 this.jogos = res.body;
                 this.jogos.map(j => {   
                     if(j.id == this.id){
@@ -51,7 +51,7 @@
                 return stringNova;
             },
             salvarJogo(){
-                this.$http.put('http://localhost:5000/api/admin/alterarjogo', this.jogo).then(res => {
+                this.$http.put('https://rakgameshop-prod.herokuapp.com/api/admin/alterarjogo', this.jogo).then(res => {
                     if(res.status == 200){
                         this.message = "Jogo Alterado!";
                     }else{

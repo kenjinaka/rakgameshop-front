@@ -21,7 +21,7 @@ export default {
       }
   },
   created() {
-    this.$http.get('http://localhost:5000/api/admin/buscarjogos').then(res =>{
+    this.$http.get('https://rakgameshop-prod.herokuapp.com/api/admin/buscarjogos').then(res =>{
       this.jogos = res.body;
       if(this.jogos[0] != undefined){
         this.jogosCarousel.push(this.jogos[0]);
